@@ -1,0 +1,327 @@
+<!doctype html>
+<html lang="cs">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Matika Start — příprava na přijímačky</title>
+<style>
+:root{--bg:#0b1020;--panel:#121a2f;--panel2:#18233d;--line:#2b3857;--text:#f4f7ff;--muted:#aab6d0;--blue:#6c8cff;--cyan:#5de0df;--yellow:#ffd166;--green:#72e0a1;--red:#ff8793}
+*{box-sizing:border-box}body{margin:0;background:radial-gradient(ellipse at 15% 0%,#1a2c54 0,transparent 42%),var(--bg);font:15px/1.5 system-ui,-apple-system,Segoe UI,sans-serif;color:var(--text)}
+button,input,select,textarea{font:inherit}button{cursor:pointer;border:0;border-radius:12px;padding:11px 15px;font-weight:700;transition:.18s}button:hover{transform:translateY(-1px);filter:brightness(1.08)}button:focus-visible,input:focus-visible,select:focus-visible,textarea:focus-visible{outline:2px solid var(--cyan);outline-offset:2px}
+.wrap{max-width:1180px;margin:auto;padding:22px}.top{display:flex;justify-content:space-between;align-items:center;gap:16px;margin-bottom:22px}.brand{display:flex;align-items:center;gap:12px}.logo{width:46px;height:46px;border-radius:15px;background:linear-gradient(135deg,var(--blue),#9c78ff);display:grid;place-items:center;font-size:25px;box-shadow:0 8px 25px #657eff40}.brand h1{font-size:20px;margin:0}.brand p{margin:2px 0 0;color:var(--muted);font-size:12px}.pill{border:1px solid var(--line);padding:8px 12px;border-radius:999px;color:var(--muted);font-size:13px}.plus-btn{background:linear-gradient(135deg,#ffd166,#ff9f43);color:#241500;font-weight:900;box-shadow:0 5px 20px #ffbd4a30;white-space:nowrap}.top-actions{display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+.hero{display:grid;grid-template-columns:1.3fr .7fr;gap:18px;margin-bottom:20px}.hero-main,.hero-side,.card{background:linear-gradient(145deg,#17233d,#10172a);border:1px solid var(--line);border-radius:22px;padding:24px;box-shadow:0 12px 35px #0002}.eyebrow{color:var(--cyan);font-weight:800;text-transform:uppercase;letter-spacing:.12em;font-size:11px}.hero h2{font-size:clamp(26px,4vw,42px);line-height:1.12;margin:12px 0}.hero p{color:var(--muted);max-width:650px}.hero-buttons{display:flex;gap:10px;flex-wrap:wrap;margin-top:20px}.primary{background:linear-gradient(135deg,#6c8cff,#9279ff);color:white}.secondary{background:#243251;color:var(--text);border:1px solid #3b4c70}.hero-side{display:flex;flex-direction:column;justify-content:center;position:relative;overflow:hidden}.orb{font-size:64px;text-align:center;filter:drop-shadow(0 0 24px #6c8cff70)}.hero-side h3{text-align:center;margin:8px 0 3px}.hero-side p{text-align:center;margin:0;color:var(--muted);font-size:13px}.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin:20px 0}.stat{background:#0c1426;border:1px solid var(--line);padding:14px;border-radius:16px}.stat strong{display:block;font-size:25px}.stat span{font-size:12px;color:var(--muted)}
+.grid{display:grid;grid-template-columns:1fr 1fr;gap:18px}.card h3{margin:0 0 6px;font-size:20px}.sub{color:var(--muted);margin:0 0 16px;font-size:13px}.topics{display:grid;grid-template-columns:1fr 1fr;gap:10px}.topic{padding:15px;border:1px solid var(--line);background:#0e172a;border-radius:15px;cursor:pointer;text-align:left;color:var(--text)}.topic.active{border-color:var(--blue);background:#1a2b50;box-shadow:inset 0 0 0 1px #6c8cff55}.topic .emoji{font-size:24px;display:block;margin-bottom:8px}.topic strong{display:block}.topic small{display:block;color:var(--muted);margin-top:4px}
+label{display:block;color:var(--muted);font-size:12px;font-weight:700;margin:14px 0 6px}select,input[type=text],textarea{width:100%;background:#0b1325;border:1px solid var(--line);border-radius:11px;padding:11px;color:var(--text)}.seg{display:flex;gap:7px;flex-wrap:wrap}.seg button{background:#0b1325;color:var(--muted);border:1px solid var(--line);padding:9px 12px}.seg button.active{background:#243b6d;color:white;border-color:var(--blue)}
+.explain{background:#0b1427;border:1px solid #344567;border-radius:15px;padding:17px;margin-top:12px}.explain h4{margin:0 0 7px}.formula{font-size:19px;font-weight:800;color:var(--yellow);margin:10px 0}.steps{color:var(--muted);margin:0;padding-left:20px}.steps li{margin:5px 0}
+.practice{grid-column:1/-1}.practice-head{display:flex;justify-content:space-between;align-items:flex-start;gap:12px;flex-wrap:wrap}.progress{height:7px;background:#283550;border-radius:99px;overflow:hidden;margin:15px 0}.progress div{height:100%;width:0;background:linear-gradient(90deg,var(--blue),var(--cyan));transition:width .25s}.question{font-size:clamp(22px,3vw,30px);font-weight:800;line-height:1.25;margin:20px 0}.qmeta{color:var(--muted);font-size:12px}.answers{display:grid;grid-template-columns:1fr 1fr;gap:10px}.answer{background:#0d172b;border:1px solid var(--line);color:var(--text);text-align:left;padding:14px;border-radius:13px}.answer.correct{border-color:var(--green);background:#123328}.answer.wrong{border-color:var(--red);background:#3a1b2a}.answer:disabled{cursor:default;transform:none}.feedback{margin-top:14px;padding:14px;border-radius:13px;display:none}.feedback.show{display:block}.feedback.good{background:#103629;border:1px solid #2b8c64}.feedback.bad{background:#3a1d2a;border:1px solid #a54a61}.row{display:flex;gap:9px;flex-wrap:wrap;align-items:center;margin-top:16px}.row button{flex:0 0 auto}.muted{color:var(--muted)}.helperbox{background:#0c1528;border:1px solid #304260;border-radius:15px;padding:16px}.helperbubble{color:var(--muted);min-height:45px}.upload{border:1px dashed #52658c;background:#0c1528;padding:16px;border-radius:15px}.upload input{max-width:100%;color:var(--muted)}.preview{display:flex;flex-wrap:wrap;gap:8px;margin-top:10px}.preview img{width:90px;height:90px;object-fit:cover;border-radius:10px;border:1px solid var(--line)}.filetag{font-size:12px;color:var(--cyan);background:#14243c;padding:6px 9px;border-radius:8px}.note{font-size:12px;color:var(--muted);margin-top:10px}.premium-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}.premium-card{background:#0c1528;border:1px solid #344567;border-radius:16px;padding:17px}.premium-card h4{margin:0 0 8px;font-size:17px}.premium-card p{color:var(--muted);font-size:13px}.premium-output{margin-top:12px}.field-row{display:grid;grid-template-columns:1fr 1fr;gap:10px}.premium-tag{display:inline-block;font-size:11px;font-weight:800;letter-spacing:.04em;color:#d8caff;background:#30245a;border:1px solid #6650a0;padding:4px 8px;border-radius:99px;margin-bottom:8px}.footer{text-align:center;color:#7e8ca9;font-size:12px;padding:25px 0 8px}
+@media(max-width:760px){.premium-grid,.field-row{grid-template-columns:1fr}.wrap{padding:14px}.hero,.grid{grid-template-columns:1fr}.hero-side{min-height:180px}.practice{grid-column:auto}.stats{gap:7px}.stat{padding:10px}.stat strong{font-size:21px}.answers{grid-template-columns:1fr}.hero-main,.hero-side,.card{padding:18px}.top{align-items:flex-start}.pill{display:none}}
+</style></head>
+<body><div class="wrap">
+<header class="top"><div class="brand"><div class="logo">∑</div><div><h1>Matika Start</h1><p>Tvoje přípravna na přijímačky</p></div></div><div class="top-actions"><div class="pill">🎯 9. třída · CERMAT styl</div><button class="plus-btn" onclick="openPlusPage()">✦ Získat Plus</button></div></header>
+<section class="hero"><div class="hero-main"><div class="eyebrow">Krok za krokem k přijímačkám</div><h2>Matematika, které<br>začneš rozumět.</h2><p>Procvičuj procenta a algebraické výrazy, vybírej si obtížnost a kdykoliv si řekni o nápovědu. Chyby nejsou průšvih — ukazují nám, co potrénovat.</p><div class="hero-buttons"><button class="primary" onclick="document.getElementById('practice').scrollIntoView({behavior:'smooth'})">🚀 Začít procvičovat</button><button class="secondary" onclick="document.getElementById('learning').scrollIntoView({behavior:'smooth'})">📘 Nejdřív vysvětlení</button></div><div class="stats"><div class="stat"><strong id="statDone">0</strong><span>zodpovězených úloh</span></div><div class="stat"><strong id="statCorrect">0</strong><span>správných odpovědí</span></div><div class="stat"><strong id="statRate">—</strong><span>úspěšnost</span></div></div></div><div class="hero-side"><div class="orb">🤖</div><h3>Matík — tvůj pomocník</h3><p>Vysvětlí postup, napoví další krok<br>a pomůže ti pochopit chybu.</p></div></section>
+
+<section class="card" id="pocketPhone" style="margin-bottom:18px">
+  <div class="practice-head"><div><h3>📱 Matíkův kapesní telefon</h3><p class="sub">Malá studijní výbava přímo v Matika Startu — poznámky, připomínky, kalkulačka a rychlé odkazy.</p></div><span class="pill">Ukládá se v tomto prohlížeči</span></div>
+  <div class="topics" style="margin-bottom:14px">
+    <button class="topic active" id="phoneTabNotes" onclick="showPhoneTab('notes')"><span class="emoji">📝</span><strong>Poznámky</strong><small>Zápisky a vzorce</small></button>
+    <button class="topic" id="phoneTabReminders" onclick="showPhoneTab('reminders')"><span class="emoji">⏰</span><strong>Připomínky</strong><small>Co se naučit a kdy</small></button>
+    <button class="topic" id="phoneTabCalc" onclick="showPhoneTab('calc')"><span class="emoji">🧮</span><strong>Kalkulačka</strong><small>Výpočty pro matematiku</small></button>
+    <button class="topic" id="phoneTabLinks" onclick="showPhoneTab('links')"><span class="emoji">🔗</span><strong>Rychlé odkazy</strong><small>ChatGPT a Google Keep</small></button>
+  </div>
+  <div id="phoneNotesPanel" class="helperbox">
+    <label for="noteTitle">Název poznámky</label><input id="noteTitle" type="text" placeholder="Např. Procenta – vzorce">
+    <label for="noteBody">Text poznámky</label><textarea id="noteBody" rows="4" placeholder="Zapiš si vzorec, příklad nebo co si chceš zopakovat…"></textarea>
+    <div class="row"><button class="primary" onclick="savePhoneNote()">💾 Uložit poznámku</button><button class="secondary" onclick="exportPhoneNotes()">⬇️ Exportovat poznámky</button><label style="margin:0;display:inline-flex;align-items:center;gap:8px">Importovat <input type="file" accept=".json,application/json" onchange="importPhoneNotes(event)" style="max-width:170px"></label></div>
+    <div id="phoneNotesList"></div>
+    <p class="note">Poznámky zůstávají uložené v tomto zařízení/prohlížeči. Nejsou automaticky synchronizované s Google Keep; můžeš je exportovat a přenést.</p>
+  </div>
+  <div id="phoneRemindersPanel" class="helperbox" style="display:none">
+    <label for="reminderText">Co ti mám připomenout?</label><input id="reminderText" type="text" placeholder="Např. Procvičit slovní úlohy na procenta">
+    <label for="reminderDate">Datum a čas</label><input id="reminderDate" type="datetime-local" style="width:100%;background:#0b1325;border:1px solid var(--line);border-radius:11px;padding:11px;color:var(--text)">
+    <div class="row"><button class="primary" onclick="savePhoneReminder()">➕ Přidat připomínku</button><button class="secondary" onclick="checkPhoneReminders()">🔔 Zkontrolovat připomínky</button></div>
+    <div id="phoneRemindersList"></div>
+    <p class="note">Připomínky jsou lokální. Tento samostatný HTML web nemusí upozornit, když je zavřený; pro upozornění mimo web použij připomínky v telefonu.</p>
+  </div>
+  <div id="phoneCalcPanel" class="helperbox" style="display:none">
+    <label for="calcDisplay">Výraz (můžeš použít + − × ÷ a závorky)</label><input id="calcDisplay" type="text" inputmode="decimal" placeholder="Např. (240 * 72) / 100" onkeydown="if(event.key==='Enter')calculatePhone()">
+    <div class="row"><button class="primary" onclick="calculatePhone()">= Vypočítat</button><button class="secondary" onclick="$('calcDisplay').value='';$('calcResult').textContent='Výsledek se ukáže tady.'">Vymazat</button></div>
+    <div id="calcResult" class="explain">Výsledek se ukáže tady.</div>
+    <p class="note">Používej * pro násobení a / pro dělení. Kalkulačka nepřijímá proměnné ani textové příkazy.</p>
+  </div>
+  <div id="phoneLinksPanel" class="helperbox" style="display:none">
+    <h4>🌐 ChatGPT</h4><p class="muted">Připravím zadání pro doučování a otevřu ChatGPT v novém okně.</p>
+    <label for="phoneAIQuestion">Co chceš s AI probrat?</label><textarea id="phoneAIQuestion" rows="2" placeholder="Např. Vysvětli mi, jak zjistit základ, když znám část a procenta."></textarea>
+    <div class="row"><button class="primary" onclick="preparePhoneAI()">🤖 Připravit zadání pro ChatGPT</button><button class="secondary" onclick="window.open('https://chatgpt.com/','_blank','noopener')">Otevřít ChatGPT ↗</button></div><div id="phoneAIOutput" class="explain" style="display:none"></div>
+    <div class="divider" style="height:1px;background:var(--line);margin:20px 0"></div>
+    <h4>🗒️ Google Keep</h4><p class="muted">Otevři Google Keep pro vlastní synchronizované poznámky. Přímé automatické propojení by vyžadovalo přihlášení a oficiální integraci, které tento soubor nemá.</p>
+    <div class="row"><button class="primary" onclick="window.open('https://keep.google.com/','_blank','noopener')">Otevřít Google Keep ↗</button><button class="secondary" onclick="exportPhoneNotes()">Exportovat poznámky z Matíkova telefonu</button></div>
+  </div>
+</section>
+<div class="grid">
+<section class="card"><h3>📚 Vyber téma</h3><p class="sub">Začni tématem, které chceš dostat do ruky.</p><div class="topics"><button class="topic active" data-topic="percent" onclick="setTopic('percent')"><span class="emoji">％</span><strong>Procenta</strong><small>Výpočet části, základu i procent</small></button><button class="topic" data-topic="algebra" onclick="setTopic('algebra')"><span class="emoji">𝑥²</span><strong>Algebraické výrazy</strong><small>Dosazování, úpravy, roznásobování</small></button></div>
+<label>Obtížnost</label><div class="seg" id="difficulty"><button class="active" data-d="1" onclick="setDifficulty(1)">1 · Rozjezd</button><button data-d="2" onclick="setDifficulty(2)">2 · Střední</button><button data-d="3" onclick="setDifficulty(3)">3 · Přijímačky</button></div>
+<label>Jak chceš odpovídat?</label><div class="seg" id="mode"><button class="active" data-m="abcd" onclick="setMode('abcd')">A / B / C / D</button><button data-m="input" onclick="setMode('input')">Napíšu výsledek</button><button data-m="yesno" onclick="setMode('yesno')">Ano / Ne</button></div>
+<label>Počet úloh</label><select id="count"><option value="5">5 úloh</option><option value="10" selected>10 úloh</option><option value="15">15 úloh</option></select>
+<div class="row"><button class="primary" onclick="startPractice()">▶ Spustit trénink</button><button class="secondary" onclick="showExplanation()">📖 Vysvětlení tématu</button></div></section>
+<section class="card" id="premiumLab" style="grid-column:1/-1"><div class="practice-head"><div><h3>✦ Matika Start Plus</h3><p class="sub">Pokročilé nástroje pro chytřejší procvičování. 490 TG Coins / měsíc · prvních 7 dní zdarma.</p></div><span class="pill">Plus nástroje – ukázkový režim</span></div><div class="premium-grid"><div class="premium-card"><span class="premium-tag">OSOBNÍ PLÁN</span><h4>🧠 Osobní matematický trenér</h4><p>Vyhodnotí tvoje dosavadní odpovědi, ukáže silnější a slabší témata a doporučí další krok.</p><button class="primary" onclick="runMathCoach()">Vyhodnotit pokrok</button></div><div class="premium-card"><span class="premium-tag">NA ČAS</span><h4>⏱️ Přijímačky nanečisto</h4><p>Deset úloh na čas, průběžný časovač, bodování, rozbor chyb a doporučení po dokončení.</p><button class="primary" onclick="startMockExam()">Spustit test</button></div><div class="premium-card"><span class="premium-tag">K TISKU</span><h4>📝 Pracovní listy na míru</h4><p>Vyber téma, obtížnost a počet úloh. Vytiskni si zadání a samostatný list s výsledky a postupy.</p><button class="primary" onclick="openWorksheetBuilder()">Vytvořit list</button></div></div><div id="premiumOutput" class="premium-output"></div><p class="note">Poznámka: funkce v tomto souboru běží lokálně v prohlížeči. TG Coins jsou virtuální měna; skutečné platby se nepoužívají. Ukládání zůstatku a opravdová aktivace Plus zatím nejsou propojené s účtem.</p></section>
+<section class="card" id="learning"><h3>💡 Rychlé vysvětlení</h3><p class="sub">Než začneš, připomeň si základní postup.</p><div id="explanation" class="explain"><h4>Procenta v kostce</h4><p>Procento znamená „ze sta“. 25 % je tedy 25 ze 100, neboli čtvrtina.</p><div class="formula">část = základ × procenta ÷ 100</div><ol class="steps"><li>Najdi základ — celek, ze kterého počítáš.</li><li>Převeď procenta na číslo a vynásob základ.</li><li>Pokud hledáš procenta, vyděl část základem a vynásob 100.</li></ol></div></section>
+<section class="card practice" id="practice"><div class="practice-head"><div><h3>✏️ Procvičování</h3><p class="sub">Vyber téma a obtížnost a pak se pusť do úloh.</p></div><span class="pill" id="qCounter">Připraveno</span></div><div class="progress"><div id="progressBar"></div></div><div id="questionArea"><div class="explain"><h4>Čeká na tebe první úloha</h4><p class="muted">Klikni na „Spustit trénink“. Po každé odpovědi dostaneš vyhodnocení a vysvětlení postupu.</p></div></div></section>
+<section class="card"><h3>🧠 Zeptej se Matíka</h3><p class="sub">Pomocník při procvičování. Zkus třeba „Jak zjistím 15 % z 240?“</p><div class="helperbox"><div class="helperbubble" id="helperReply">Ahoj! 😊 Napiš, co ti nejde, nebo si vyber nápovědu přímo u příkladu.</div><label for="helperInput">Tvoje otázka</label><input id="helperInput" type="text" placeholder="Např. Jak vypočítám 20 % z 350?"><div class="row"><button class="primary" onclick="askHelper()">Zeptat se</button><button class="secondary" onclick="hint()">Nápověda k úloze</button></div></div><p class="note">Matík používá připravené vysvětlení k těmto tématům. Pokud otázka vyžaduje něco mimo ně, můžeš ji napsat vlastními slovy a společně ji rozebereme v chatu.</p></section>
+<section class="card"><h3>📎 Nahraj vlastní příklady</h3><p class="sub">Přidej fotku zadání nebo soubor, který chceš procvičit.</p><div class="upload"><label for="files">Fotky nebo soubory (obrázky, PDF, TXT)</label><input id="files" type="file" accept="image/*,.pdf,.txt" multiple onchange="previewFiles(event)"><div class="preview" id="filePreview"></div><label for="customExample">Nebo vlož zadání sem</label><textarea id="customExample" rows="3" placeholder="Vlož vlastní příklad nebo zadání z pracovního listu…"></textarea><div class="row"><button class="primary" onclick="addCustom()">Přidat jako vlastní zadání</button></div><p class="note" id="uploadStatus">Soubory zůstávají v tomto otevřeném webu; zatím se nikam neposílají. Fotky a PDF se zde zobrazí jako podklady, text zadání můžeš vložit do pole.</p></div></section>
+<section class="card" id="podcastStudio"><h3>🎙️ Podcastové studio</h3><p class="sub">Uč se poslechem, nebo sleduj rozhovor dvou AI moderátorů.</p>
+<div class="topics">
+<button class="topic active" id="podTypeMe" onclick="setPodcastType('me')"><span class="emoji">🗣️</span><strong>AI a TY</strong><small>Napíšeš otázku a Matík ti poradí</small></button>
+<button class="topic" id="podTypeAI" onclick="setPodcastType('ai')"><span class="emoji">🤖🤖</span><strong>AI a AI</strong><small>Dva moderátoři diskutují o matematice</small></button>
+</div>
+<label for="podTopic">Téma podcastu</label><select id="podTopic"><option value="percent">Procenta</option><option value="algebra">Algebraické výrazy</option><option value="exam">Tipy k přijímačkám</option></select>
+<label for="podLength">Délka rozhovoru</label><select id="podLength"><option value="short">Krátký · asi 1 minuta</option><option value="medium" selected>Střední · asi 3 minuty</option><option value="long">Delší · asi 5 minut</option></select>
+<div id="podMePanel" class="helperbox"><p class="muted">Zeptej se Matíka na cvičení tady, nebo otevři skutečný chat s AI pro volné doplňující otázky.</p><label for="podQuestion">Na co se chceš zeptat?</label><input id="podQuestion" type="text" placeholder="Např. Jak zjistím 72 % z 240?"><div class="row"><button class="primary" onclick="podcastAsk()">Zeptat se Matíka</button><button class="secondary" onclick="openLiveAIChat()">🌐 Pokračovat se skutečnou AI</button></div><div id="liveAIPrompt" class="explain" style="display:none;margin-top:10px"></div><p class="note">Tlačítko otevře ChatGPT a připraví zadání ke zkopírování. Samotné propojení s AI vyžaduje otevřít chat; tento soubor nemá vlastní server ani API klíč.</p></div>
+<div id="podAIPanel" class="helperbox" style="display:none"><p class="muted">Vyber téma a délku. Vznikne ukázkový rozhovor mezi dvěma rolemi: Alex vysvětluje a Bára doptává se jako studentka.</p><div class="row"><button class="primary" onclick="generateAIPodcast()">✨ Vytvořit rozhovor</button></div></div>
+<div id="podOutput" class="explain" style="display:none"></div>
+<div class="row"><button class="secondary" onclick="speakPodcast()">🔊 Přehrát nahlas</button><button class="secondary" onclick="stopPodcast()">⏹ Zastavit</button><button class="secondary" onclick="readExplanation()">📖 Přečíst vysvětlení</button><button class="secondary" onclick="showVideoPlan()">🎬 Osnova videa</button><button class="secondary" onclick="reviewMistakes()">🔁 Moje chyby</button></div>
+<p class="note">Poznámka: tato verze vytváří ukázkové rozhovory z připravených vzdělávacích šablon a používá hlas dostupný v prohlížeči. Není zatím připojena k živé AI službě a hlasy nejsou samostatně generované.</p><div id="extraContent" class="explain" style="display:none"></div></section>
+</div><footer class="footer">Matika Start · Každý příklad je krok dopředu. 💙</footer></div>
+
+<div id="plusPage" class="plus-page" style="display:none" role="dialog" aria-modal="true" aria-labelledby="plusTitle">
+  <div class="plus-shell">
+    <div class="plus-top"><button class="secondary" onclick="closePlusPage()">← Zpět do Matika Start Free</button><span class="plus-label">✦ MATIKA START PLUS</span></div>
+    <div class="plus-hero"><div class="eyebrow">Víc než obyčejné procvičování</div><h2 id="plusTitle">Tvůj osobní AI parťák na přijímačky.</h2><p>Vše z Free verze a navíc chytré nástroje, které ti pomohou zjistit, co procvičit, připravit se na test a učit se vlastním tempem.</p><div class="plus-price"><span>490 TG Coins</span> / měsíc <small>Prvních 7 dní zdarma · žádné skutečné peníze</small></div><button class="plus-cta" onclick="showPlusDemo()">Aktivovat ukázkové Plus <span>→</span></button><p class="note">TG Coins jsou herní měna aplikace. Nejde o skutečné peníze; odečítání mincí a aktivace tarifu jsou zatím pouze ukázkové.</p></div>
+    <div class="plus-benefits"><h3>Co získáš s Plus</h3><div class="plus-benefit-grid">
+      <article class="plus-benefit"><div>🧠</div><h4>Osobní matematický trenér</h4><p>Najde témata, která ti nejdou, a navrhne, co procvičit dál.</p></article>
+      <article class="plus-benefit"><div>🎯</div><h4>Přijímačky nanečisto</h4><p>Test na čas, bodování, přehled výsledků a rozbor chyb.</p></article>
+      <article class="plus-benefit"><div>📝</div><h4>Pracovní listy na míru</h4><p>Vyber si téma a obtížnost. Připrav si zadání i samostatná řešení k tisku.</p></article>
+      <article class="plus-benefit"><div>💬</div><h4>Rozšířený Matík</h4><p>Více studijních tipů a srozumitelných postupů krok za krokem.</p></article>
+      <article class="plus-benefit"><div>📈</div><h4>Pokrok na jednom místě</h4><p>Sleduj správné odpovědi, chyby a témata, která už zvládáš.</p></article>
+      <article class="plus-benefit"><div>⚡</div><h4>Vlastní tempo</h4><p>Procvičuj podle tématu, úrovně a cíle — bez zbytečného hledání.</p></article>
+    </div><div id="plusDemoMessage" class="explain" style="display:none;margin-top:16px">🎉 Tohle je ukázka Plus! Neplatíš skutečnými penězi! TG Coins jsou virtuální měna. Aktivace předplatného je zatím jen ukázka rozhraní.</div><div class="plus-bottom"><button class="secondary" onclick="closePlusPage()">Pokračovat ve Free verzi</button><button class="primary" onclick="closePlusPage();document.getElementById('premiumLab').scrollIntoView({behavior:'smooth',block:'start'})">Prohlédnout Plus nástroje</button></div></div>
+  </div>
+</div>
+<style>
+.plus-page{position:fixed;inset:0;z-index:1000;overflow:auto;background:radial-gradient(ellipse at 50% 0%,#283b68 0,transparent 55%),#080d19;padding:24px 16px}.plus-shell{max-width:980px;margin:0 auto}.plus-top{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap;margin-bottom:22px}.plus-label{font-size:12px;font-weight:900;letter-spacing:.14em;color:#ffd166}.plus-hero{border:1px solid #3a4969;background:linear-gradient(145deg,#182744,#101729);border-radius:26px;padding:clamp(24px,5vw,48px);text-align:center}.plus-hero h2{font-size:clamp(32px,5vw,54px);line-height:1.08;margin:14px auto;max-width:700px}.plus-hero>p{color:var(--muted);max-width:650px;margin:0 auto 16px}.plus-price{font-size:18px;margin:24px 0 16px}.plus-price span{font-size:42px;font-weight:850;color:#fff}.plus-price small{display:block;color:var(--green);font-size:13px;margin-top:4px}.plus-cta{display:flex;justify-content:center;align-items:center;gap:24px;width:min(100%,460px);margin:0 auto;background:linear-gradient(110deg,#ffd166,#ffad4d);color:#241500;border-radius:999px;padding:17px 22px;font-size:17px}.plus-benefits{padding:28px 0}.plus-benefits>h3{text-align:center;font-size:27px;margin:0 0 18px}.plus-benefit-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}.plus-benefit{padding:21px;border:1px solid #2b3857;background:#121a2f;border-radius:18px}.plus-benefit>div{font-size:27px}.plus-benefit h4{margin:10px 0 6px;font-size:17px}.plus-benefit p{color:var(--muted);font-size:14px;margin:0}.plus-bottom{display:flex;justify-content:center;gap:10px;flex-wrap:wrap;margin:22px 0 35px}@media(max-width:700px){.plus-benefit-grid{grid-template-columns:1fr}.plus-hero{padding:24px 18px}}
+</style>
+<script>
+function openPlusPage(){document.getElementById('plusPage').style.display='block';document.body.style.overflow='hidden';}
+function closePlusPage(){document.getElementById('plusPage').style.display='none';document.body.style.overflow='';}
+function showPlusDemo(){document.getElementById('plusDemoMessage').style.display='block';document.getElementById('plusDemoMessage').scrollIntoView({behavior:'smooth',block:'center'});}
+</script>
+
+<script>
+let topic='percent',difficulty=1,mode='abcd',questions=[],index=0,done=0,correct=0,answered=false,current=null,mistakes=[],customs=[];
+const topicStats={percent:{done:0,correct:0},algebra:{done:0,correct:0}};let examMode=false,examTimer=null,examSeconds=1200,examStartDone=0,examStartCorrect=0;
+const $=id=>document.getElementById(id);
+
+const PHONE_NOTES_KEY='matikaStartPhoneNotes_v1', PHONE_REMINDERS_KEY='matikaStartPhoneReminders_v1';
+let phoneNotes=loadPhoneData(PHONE_NOTES_KEY), phoneReminders=loadPhoneData(PHONE_REMINDERS_KEY);
+function loadPhoneData(key){try{return JSON.parse(localStorage.getItem(key)||'[]')}catch(e){return []}}
+function storePhoneData(key,data){try{localStorage.setItem(key,JSON.stringify(data))}catch(e){alert('Prohlížeč nedovolil uložit data. Zkus export poznámek.')} }
+function showPhoneTab(tab){
+ ['notes','reminders','calc','links'].forEach(t=>{
+  $('phone'+({notes:'Notes',reminders:'Reminders',calc:'Calc',links:'Links'}[t])+'Panel').style.display=t===tab?'block':'none';
+  $('phoneTab'+({notes:'Notes',reminders:'Reminders',calc:'Calc',links:'Links'}[t])).classList.toggle('active',t===tab);
+ });
+ if(tab==='notes')renderPhoneNotes(); if(tab==='reminders')renderPhoneReminders();
+}
+function savePhoneNote(){
+ const title=$('noteTitle').value.trim()||'Poznámka', body=$('noteBody').value.trim();
+ if(!body){alert('Napiš nejdřív text poznámky.');return}
+ phoneNotes.unshift({id:Date.now(),title,body,updated:new Date().toISOString()});
+ storePhoneData(PHONE_NOTES_KEY,phoneNotes);$('noteTitle').value='';$('noteBody').value='';renderPhoneNotes();
+}
+function renderPhoneNotes(){
+ const el=$('phoneNotesList');if(!el)return;
+ if(!phoneNotes.length){el.innerHTML='<div class="explain"><p class="muted">Zatím tu nemáš žádné poznámky. Ulož si sem vzorce nebo příklady. 💙</p></div>';return}
+ el.innerHTML='<h4 style="margin-top:18px">Tvoje poznámky ('+phoneNotes.length+')</h4>'+phoneNotes.map(n=>'<div class="explain"><h4>'+escapeHTML(n.title)+'</h4><p style="white-space:pre-wrap">'+escapeHTML(n.body)+'</p><div class="row"><button class="secondary" onclick="editPhoneNote('+n.id+')">Upravit</button><button class="secondary" onclick="deletePhoneNote('+n.id+')">Smazat</button></div></div>').join('');
+}
+function editPhoneNote(id){const n=phoneNotes.find(x=>x.id===id);if(!n)return;$('noteTitle').value=n.title;$('noteBody').value=n.body;phoneNotes=phoneNotes.filter(x=>x.id!==id);storePhoneData(PHONE_NOTES_KEY,phoneNotes);renderPhoneNotes();$('noteTitle').focus()}
+function deletePhoneNote(id){phoneNotes=phoneNotes.filter(x=>x.id!==id);storePhoneData(PHONE_NOTES_KEY,phoneNotes);renderPhoneNotes()}
+function exportPhoneNotes(){
+ const blob=new Blob([JSON.stringify({notes:phoneNotes,reminders:phoneReminders},null,2)],{type:'application/json'});
+ const url=URL.createObjectURL(blob),a=document.createElement('a');a.href=url;a.download='matika-start-poznamky.json';a.click();URL.revokeObjectURL(url);
+}
+function importPhoneNotes(ev){
+ const file=ev.target.files&&ev.target.files[0];if(!file)return;const reader=new FileReader();
+ reader.onload=()=>{try{const data=JSON.parse(reader.result);const notes=Array.isArray(data)?data:data.notes;if(!Array.isArray(notes))throw new Error('format');phoneNotes=notes.filter(n=>n&&typeof n.body==='string').map(n=>({id:n.id||Date.now()+Math.random(),title:String(n.title||'Poznámka'),body:n.body,updated:n.updated||new Date().toISOString()}));if(Array.isArray(data.reminders))phoneReminders=data.reminders;storePhoneData(PHONE_NOTES_KEY,phoneNotes);storePhoneData(PHONE_REMINDERS_KEY,phoneReminders);renderPhoneNotes();alert('Import dokončen.');}catch(e){alert('Soubor se nepodařilo načíst. Vyber JSON export z Matika Startu.')}};reader.readAsText(file);ev.target.value='';
+}
+function savePhoneReminder(){
+ const text=$('reminderText').value.trim(),when=$('reminderDate').value;
+ if(!text||!when){alert('Vyplň text i datum připomínky.');return}
+ const date=new Date(when);if(Number.isNaN(date.getTime())){alert('Zkontroluj datum a čas.');return}
+ phoneReminders.unshift({id:Date.now(),text,when:date.toISOString(),done:false,notified:false});
+ storePhoneData(PHONE_REMINDERS_KEY,phoneReminders);$('reminderText').value='';$('reminderDate').value='';renderPhoneReminders();
+}
+function renderPhoneReminders(){
+ const el=$('phoneRemindersList');if(!el)return;
+ if(!phoneReminders.length){el.innerHTML='<div class="explain"><p class="muted">Zatím nemáš žádné připomínky.</p></div>';return}
+ el.innerHTML='<h4 style="margin-top:18px">Tvoje připomínky</h4>'+phoneReminders.slice().sort((a,b)=>new Date(a.when)-new Date(b.when)).map(r=>'<div class="explain"><b>'+escapeHTML(r.text)+'</b><p class="muted">'+new Date(r.when).toLocaleString('cs-CZ')+(r.done?' · Hotovo':'')+'</p><div class="row">'+(r.done?'':'<button class="secondary" onclick="completePhoneReminder('+r.id+')">✓ Hotovo</button>')+'<button class="secondary" onclick="deletePhoneReminder('+r.id+')">Smazat</button></div></div>').join('');
+}
+function completePhoneReminder(id){const r=phoneReminders.find(x=>x.id===id);if(r)r.done=true;storePhoneData(PHONE_REMINDERS_KEY,phoneReminders);renderPhoneReminders()}
+function deletePhoneReminder(id){phoneReminders=phoneReminders.filter(x=>x.id!==id);storePhoneData(PHONE_REMINDERS_KEY,phoneReminders);renderPhoneReminders()}
+function checkPhoneReminders(){
+ const now=Date.now(),due=phoneReminders.filter(r=>!r.done&&new Date(r.when).getTime()<=now);
+ if(!due.length){alert('Teď nemáš žádnou nevyřízenou připomínku po termínu.');return}
+ alert('⏰ Připomínky:\\n\\n'+due.map(r=>'• '+r.text).join('\\n'));
+ if('Notification'in window&&Notification.permission==='granted'){due.forEach(r=>{if(!r.notified){new Notification('Matika Start – připomínka',{body:r.text});r.notified=true}});storePhoneData(PHONE_REMINDERS_KEY,phoneReminders)}
+ else if('Notification'in window&&Notification.permission==='default'&&confirm('Chceš povolit oznámení, když je tento web otevřený?'))Notification.requestPermission();
+}
+function calculatePhone(){
+ const raw=$('calcDisplay').value.trim(),out=$('calcResult');
+ if(!raw){out.textContent='Zadej matematický výraz.';return}
+ if(!/^[0-9+\-*/().,%\s]+$/.test(raw)){out.textContent='Použij pouze čísla, desetinnou tečku, závorky a operátory + − * / . Pro procenta nejprve vyděl 100.';return}
+ if(/\/\s*0(?:\D|$)/.test(raw)){out.textContent='Dělení nulou není možné.';return}
+ try{const normalized=raw.replace(/,/g,'.').replace(/%/g,'/100');const result=Function('"use strict";return ('+normalized+')')();if(typeof result!=='number'||!Number.isFinite(result))throw new Error();out.innerHTML='<b>Výsledek: '+Number(result.toPrecision(12))+'</b>'; }catch(e){out.textContent='Výraz se nepodařilo spočítat. Zkontroluj zápis a závorky.'}
+}
+function preparePhoneAI(){
+ const q=$('phoneAIQuestion').value.trim(), prompt='Jsi trpělivý učitel matematiky pro žáka 9. třídy připravujícího se na přijímací zkoušky v ČR. Vysvětluj česky, krok za krokem, a po vysvětlení dej podobný příklad k procvičení. Neprozrazuj výsledek bez postupu. Moje otázka: '+(q||'Začni krátkým opakováním procent a algebraických výrazů a zeptej se, co mi nejde.');
+ const out=$('phoneAIOutput');out.style.display='block';out.innerHTML='<h4>Zadání pro ChatGPT</h4><p id="phonePromptText" style="white-space:pre-wrap"></p><div class="row"><button class="primary" onclick="copyPhoneAIPrompt()">📋 Zkopírovat zadání</button><button class="secondary" onclick="window.open(\'https://chatgpt.com/\',\'_blank\',\'noopener\')">Otevřít ChatGPT ↗</button></div>';
+ $('phonePromptText').textContent=prompt;window.phoneAIPrompt=prompt;
+ try{if(navigator.clipboard&&navigator.clipboard.writeText)navigator.clipboard.writeText(prompt).catch(()=>{});}catch(e){}
+}
+function copyPhoneAIPrompt(){if(!window.phoneAIPrompt)return;if(navigator.clipboard&&navigator.clipboard.writeText)navigator.clipboard.writeText(window.phoneAIPrompt).then(()=>alert('Zadání zkopírováno.')).catch(()=>fallbackPhonePrompt());else fallbackPhonePrompt()}
+function fallbackPhonePrompt(){const el=$('phonePromptText');if(!el)return;const ta=document.createElement('textarea');ta.value=window.phoneAIPrompt;ta.rows=5;ta.style.width='100%';el.replaceChildren(ta);ta.focus();ta.select()}
+function setTopic(t){topic=t;document.querySelectorAll('.topic[data-topic]').forEach(b=>b.classList.toggle('active',b.dataset.topic===t));showExplanation();if(questions.length)resetPractice()}
+function setDifficulty(d){difficulty=d;document.querySelectorAll('#difficulty button').forEach(b=>b.classList.toggle('active',+b.dataset.d===d));if(questions.length)resetPractice()}
+function setMode(m){mode=m;document.querySelectorAll('#mode button').forEach(b=>b.classList.toggle('active',b.dataset.m===m));if(questions.length)resetPractice()}
+function showExplanation(){let e=$('explanation');if(topic==='percent'){e.innerHTML='<h4>Procenta v kostce</h4><p>Procento znamená „ze sta“. 25 % je 25 ze 100, tedy čtvrtina.</p><div class="formula">část = základ × procenta ÷ 100</div><ol class="steps"><li><b>Kolik je 20 % z 350?</b> Vypočítej 350 × 20 ÷ 100 = 70.</li><li><b>Kolik procent je 18 z 60?</b> 18 ÷ 60 × 100 = 30 %.</li><li><b>Najdi základ:</b> 15 je 25 % z čísla. Základ = 15 ÷ 0,25 = 60.</li></ol><p class="muted">Tip: Vždy si ujasni, co hledáš — část, základ, nebo procenta.</p>'}else{e.innerHTML='<h4>Algebraické výrazy v kostce</h4><p>Proměnná (např. x) zastupuje číslo. Výraz upravujeme tak, abychom ho zjednodušili.</p><div class="formula">3x + 2x = 5x</div><ol class="steps"><li><b>Dosazování:</b> pro x = 4 je 3x + 2 = 3 · 4 + 2 = 14.</li><li><b>Sčítání podobných členů:</b> 7a − 2a = 5a. Čísla u stejné proměnné se sečtou či odečtou.</li><li><b>Závorky:</b> 3(x + 4) = 3x + 12. Číslo před závorkou vynásobí každý člen uvnitř.</li></ol><p class="muted">Tip: Členy s různými proměnnými (např. 2a + 3b) nesčítáme dohromady.</p>'}}
+function rnd(a,b){return Math.floor(Math.random()*(b-a+1))+a}
+function makeQ(){if(topic==='percent')return percentQ();return algebraQ()}
+function percentQ(){let a,b,ans,txt,steps,hintText;let kind=difficulty===1?rnd(0,1):difficulty===2?rnd(0,2):rnd(0,3);
+if(kind===0){b=[10,20,25,50,75][rnd(0,4)];a=difficulty===1?[40,80,120,200][rnd(0,3)]:rnd(60,480);ans=a*b/100;txt=`Kolik je ${b} % z ${a}?`;steps=`${a} × ${b} ÷ 100 = ${ans}.`;hintText='Vynásob základ procenty a vyděl 100.'}
+else if(kind===1){a=difficulty===1?[12,15,20,30][rnd(0,3)]:rnd(12,96);b=difficulty===1?[40,60,80,100][rnd(0,3)]:rnd(80,240);ans=Math.round(a/b*100*100)/100;txt=`Kolik procent je ${a} z ${b}?`;steps=`${a} ÷ ${b} × 100 = ${ans} %.`;hintText='Část vyděl základem a výsledek vynásob 100.'}
+else if(kind===2){b=[10,20,25,30,40,50][rnd(0,5)];ans=rnd(2,12)*b;let base=ans;a=base*b/100;ans=base;txt=`${a} je ${b} % z jakého čísla?`;steps=`Základ = část ÷ (procenta / 100) = ${a} ÷ ${b/100} = ${ans}.`;hintText='Část vyděl desetinným číslem, které odpovídá procentům.'}
+else{let p=[10,15,20,25][rnd(0,3)],base=[200,240,320,400][rnd(0,3)],increase=rnd(1,4)*10;let part=base*p/100;ans=base+part;txt=`Mikina stála ${base} Kč. Cena se zvýšila o ${p} %. Kolik stojí nyní?`;steps=`${p} % z ${base} = ${part} Kč. Nová cena: ${base} + ${part} = ${ans} Kč.`;hintText='Nejprve vypočítej zvýšení ceny a pak ho přičti k původní ceně.'}
+return {txt,ans,steps,hintText,unit:txt.includes('Kč')?' Kč':(kind===1?' %':'')}}
+function algebraQ(){let x,a,b,ans,txt,steps,hintText,kind=difficulty===1?rnd(0,1):difficulty===2?rnd(0,2):rnd(0,3);
+if(kind===0){x=rnd(2,9);a=rnd(2,7);b=rnd(1,9);ans=a*x+b;txt=`Pro x = ${x} vypočítej výraz ${a}x + ${b}.`;steps=`Dosadíme x = ${x}: ${a} · ${x} + ${b} = ${a*x} + ${b} = ${ans}.`;hintText='Nahraď x daným číslem. Nejdřív násob, potom sčítej.'}
+else if(kind===1){a=rnd(3,12);b=rnd(1,a-1);ans=a-b;txt=`Zjednoduš výraz ${a}x − ${b}x.`;steps=`Odečteme koeficienty u stejné proměnné: (${a} − ${b})x = ${ans}x.`;hintText='Sečti nebo odečti jen čísla před stejnou proměnnou.'}
+else if(kind===2){a=rnd(2,6);b=rnd(2,9);ans=a*b;txt=`Zjednoduš výraz ${a}(${b}x + 3). Jaký je koeficient u x?`;steps=`Roznásobíme závorku: ${a} · ${b}x + ${a} · 3 = ${ans}x + ${a*3}. Koeficient u x je ${ans}.`;hintText='Číslo před závorkou vynásob každý člen uvnitř.'}
+else{a=rnd(2,8);b=rnd(2,9);let c=rnd(1,8);ans=a*b+c;txt=`Pro x = ${b} vypočítej ${a}(x + ${c}).`;steps=`Nejprve závorka: ${b} + ${c} = ${b+c}. Potom ${a} · ${b+c} = ${ans}.`;hintText='Nejdřív vypočítej závorku, pak násob.'}
+return {txt,ans,steps,hintText,unit:''}}
+function optionsFor(q){let val=Number(q.ans),set=new Set([val]);while(set.size<4){let delta=rnd(1,Math.max(4,Math.round(Math.abs(val)*.3)||4));set.add(Math.random()<.5?val+delta:val-delta)}return [...set].sort(()=>Math.random()-.5)}
+function startPractice(){clearInterval(examTimer);examMode=false;let n=+$('count').value;questions=Array.from({length:n},()=>{let q=makeQ();q._topic=topic;return q});index=0;answered=false;renderQuestion();$('practice').scrollIntoView({behavior:'smooth',block:'start'})}
+function runMathCoach(){const el=$('premiumOutput');const names={percent:'Procenta',algebra:'Algebraické výrazy'};let lines=Object.keys(topicStats).map(k=>{let s=topicStats[k],pct=s.done?Math.round(s.correct/s.done*100):null;return `<div class="explain"><b>${names[k]}</b><p>${s.done?`Úspěšnost ${pct} % (${s.correct}/${s.done} správně).`:'Zatím nemáme dost odpovědí pro hodnocení.'}</p><div class="progress"><div style="width:${pct||0}%"></div></div></div>`}).join('');let known=Object.keys(topicStats).filter(k=>topicStats[k].done).sort((a,b)=>(topicStats[a].correct/topicStats[a].done)-(topicStats[b].correct/topicStats[b].done));let rec=known.length?`Doporučení: pokračuj v tématu <b>${names[known[0]]}</b>, kde máš zatím nižší úspěšnost. Dej si krátké procvičování a potom zkontroluj, jestli se výsledek zlepšil.`:'Doporučení: vyřeš nejprve alespoň 5 úloh z procent a 5 z algebraických výrazů. Pak se vrátíš a trenér ti doporučí další krok.';el.innerHTML=`<h4>🧠 Tvůj studijní přehled</h4><p>${rec}</p>${lines}<p class="note">Doporučení vychází z odpovědí v tomto otevřeném prohlížeči. Zatím se nesynchronizuje mezi zařízeními.</p>`;el.scrollIntoView({behavior:'smooth',block:'nearest'})}
+function startMockExam(){clearInterval(examTimer);examMode=true;examSeconds=1200;examStartDone=done;examStartCorrect=correct;mode='input';document.querySelectorAll('#mode button').forEach(b=>b.classList.toggle('active',b.dataset.m==='input'));let old=topic;questions=Array.from({length:10},(_,i)=>{topic=i%2?'algebra':'percent';difficulty=3;let q=makeQ();q._topic=topic;return q});topic=old;index=0;answered=false;renderQuestion();$('qCounter').textContent='Přijímačky · 20:00';$('premiumOutput').innerHTML='<div class="explain"><h4>⏱️ Přijímačky nanečisto spuštěny</h4><p>Vyřeš 10 úloh. Časový limit je 20 minut; po vypršení se test ukončí.</p><p class="question" id="examClock">20:00</p></div>';examTimer=setInterval(()=>{examSeconds--;let c=$('examClock');if(c)c.textContent=Math.floor(examSeconds/60)+':'+String(examSeconds%60).padStart(2,'0');if(examSeconds<=0){clearInterval(examTimer);examTimer=null;index=questions.length;renderQuestion();$('premiumOutput').innerHTML='<div class="explain"><h4>Čas vypršel</h4><p>Test byl ukončen. Prohlédni si výsledek a chyby.</p></div>'}},1000);$('practice').scrollIntoView({behavior:'smooth',block:'start'})}
+function openWorksheetBuilder(){const el=$('premiumOutput');el.innerHTML=`<div class="explain"><h4>📝 Pracovní list na míru</h4><div class="field-row"><div><label for="wsTopic">Téma</label><select id="wsTopic"><option value="percent">Procenta</option><option value="algebra">Algebraické výrazy</option></select></div><div><label for="wsDifficulty">Obtížnost</label><select id="wsDifficulty"><option value="1">1 · Rozjezd</option><option value="2">2 · Střední</option><option value="3" selected>3 · Přijímačky</option></select></div></div><label for="wsCount">Počet úloh</label><select id="wsCount"><option>5</option><option selected>10</option><option>15</option><option>20</option></select><div class="row"><button class="primary" onclick="generateWorksheet()">Vytvořit tiskový list</button></div><div id="worksheetPreview"></div></div>`;el.scrollIntoView({behavior:'smooth',block:'nearest'})}
+function generateWorksheet(){let oldTopic=topic,oldDiff=difficulty;topic=$('wsTopic').value;difficulty=+$('wsDifficulty').value;let n=+$('wsCount').value,qs=Array.from({length:n},()=>makeQ());let selectedTopic=topic;topic=oldTopic;difficulty=oldDiff;let title=selectedTopic==='percent'?'Procenta':'Algebraické výrazy';let body=qs.map((q,i)=>`<li style="margin:0 0 22px"><b>${q.txt}</b><div style="height:42px;border-bottom:1px solid #aaa;margin-top:8px"></div></li>`).join('');let answers=qs.map((q,i)=>`<li style="margin-bottom:14px"><b>${q.ans}${q.unit||''}</b><br>${q.steps}</li>`).join('');let html=`<!doctype html><html lang="cs"><meta charset="utf-8"><title>Pracovní list – ${title}</title><style>body{font:16px Arial,sans-serif;max-width:800px;margin:35px auto;color:#111}h1{font-size:25px}li{page-break-inside:avoid}.page{page-break-before:always}.meta{color:#444;margin-bottom:25px}@media print{button{display:none}}</style><h1>Matika Start · ${title}</h1><p class="meta">Jméno: ____________________ Datum: ______________ · Obtížnost ${oldDiff}</p><ol>${body}</ol><div class="page"><h1>Řešení a postupy</h1><ol>${answers}</ol></div><button onclick="window.print()">Tisknout / uložit jako PDF</button></html>`;let w=window.open('','_blank');if(!w){$('worksheetPreview').innerHTML='<p>Povol otevření nového okna pro tiskový list.</p>';return}w.document.open();w.document.write(html);w.document.close()}
+function resetPractice(){questions=[];$('questionArea').innerHTML='<div class="explain"><h4>Nastavení změněno</h4><p class="muted">Spusť nový trénink, aby úlohy odpovídaly novému nastavení.</p></div>';$('qCounter').textContent='Připraveno';$('progressBar').style.width='0%'}
+function renderQuestion(){if(index>=questions.length){clearInterval(examTimer);examTimer=null;$('qCounter').textContent='Hotovo!';$('progressBar').style.width='100%';$('questionArea').innerHTML=`<div class="explain"><h4>🎉 ${examMode?'Přijímačky dokončeny!':'Trénink dokončen!'}</h4><p>Správně: <b>${correct}</b> z ${done} zodpovězených úloh.</p><p class="muted">${done?Math.round(correct/done*100):0}% úspěšnost. ${examMode?'Výsledek je orientační tréninkové skóre, nikoli oficiální CERMAT bodování.':'Zkus další kolo nebo si projdi chyby.'}</p><div class="row"><button class="primary" onclick="startPractice()">Další trénink</button><button class="secondary" onclick="reviewMistakes()">Projít chyby</button><button class="secondary" onclick="runMathCoach()">Doporučení trenéra</button></div></div>`;if(examMode)$('premiumOutput').innerHTML='<div class="explain"><h4>📊 Výsledek testu</h4><p>'+correct+' / '+done+' správně ('+(done?Math.round(correct/done*100):0)+' %).</p><p>Další krok: otevři osobního trenéra a projdi chyby.</p></div>';return}
+current=questions[index];answered=false;$('qCounter').textContent=`Úloha ${index+1} z ${questions.length}`;$('progressBar').style.width=(index/questions.length*100)+'%';
+let qtopic=current._topic||topic;let html=`<div class="qmeta">${qtopic==='percent'?'PROCENTA':'ALGEBRAICKÉ VÝRAZY'} · OBTÍŽNOST ${difficulty}${examMode?' · PŘIJÍMAČKY NANEČISTO':''}</div><div class="question">${current.txt}</div>`;
+if(mode==='abcd'){current.options=optionsFor(current);html+='<div class="answers">'+current.options.map((o,i)=>`<button class="answer" onclick="checkAnswer(${JSON.stringify(String(o)).replace(/"/g,'&quot;')},this)"><b>${'ABCD'[i]}.</b> ${o}${current.unit||''}</button>`).join('')+'</div>'}
+else if(mode==='yesno'){let truth=Math.random()>.5;current.yesno=truth;current.displayAns=truth?current.ans:current.ans+rnd(2,9);html+=`<div class="formula">Výsledek je ${current.displayAns}${current.unit||''}. Je správně?</div><div class="answers"><button class="answer" onclick="checkAnswer('Ano',this)">Ano</button><button class="answer" onclick="checkAnswer('Ne',this)">Ne</button></div>`}
+else html+=`<label for="answerInput">Tvůj výsledek</label><input id="answerInput" type="text" placeholder="Napiš výsledek" onkeydown="if(event.key==='Enter')submitTyped()"> <div class="row"><button class="primary" onclick="submitTyped()">Zkontrolovat</button></div>`;
+html+=`<div id="feedback" class="feedback"></div><div class="row"><button class="secondary" onclick="hint()">💡 Nápověda</button><button class="secondary" onclick="showSteps()">Ukázat postup</button><button id="nextBtn" class="primary" style="display:none" onclick="nextQuestion()">Další úloha →</button></div><div id="stepArea"></div>`;$('questionArea').innerHTML=html}
+function normalize(s){return String(s).trim().replace(',','.').replace(/\s/g,'').replace(/%|Kč/g,'').toLowerCase()}
+function checkAnswer(value,btn){if(answered)return;let correctAnswer=mode==='yesno'?(current.yesno?'Ano':'Ne'):String(current.ans);let ok=mode==='yesno'?value===correctAnswer:Math.abs(Number(normalize(value))-Number(current.ans))<0.011;answered=true;done++;if(ok)correct++;let statTopic=current._topic||topic;topicStats[statTopic].done++;if(ok)topicStats[statTopic].correct++;if(!ok)mistakes.push({...current,topic:statTopic});$('statDone').textContent=done;$('statCorrect').textContent=correct;$('statRate').textContent=Math.round(correct/done*100)+'%';document.querySelectorAll('.answer').forEach(b=>{b.disabled=true;if(mode==='abcd'&&normalize(b.textContent.replace(/^[A-D]\.\s*/,''))===normalize(current.ans))b.classList.add('correct')});if(btn){btn.classList.add(ok?'correct':'wrong')}let f=$('feedback');f.className='feedback show '+(ok?'good':'bad');f.innerHTML=`<b>${ok?'Správně! 🎉':'Ještě ne — to nevadí. 💪'}</b><br>${ok?'Výborně, pokračuj dál.':`Správná odpověď je ${current.ans}${current.unit||''}.`} <span class="muted">${current.steps}</span>`;$('nextBtn').style.display='inline-block';$('progressBar').style.width=((index+1)/questions.length*100)+'%'}
+function submitTyped(){let v=$('answerInput')?.value;if(v===undefined||!v.trim())return;checkAnswer(v,null)}
+function nextQuestion(){index++;renderQuestion()}
+function hint(){if(!current){$('helperReply').textContent='Nejdřív spusť trénink a pak ti dám nápovědu k aktuální úloze.';return}$('helperReply').textContent='💡 '+current.hintText;let s=$('stepArea');if(s)s.innerHTML='<div class="explain"><b>Nápověda</b><p>'+current.hintText+'</p></div>'}
+function showSteps(){if(!current)return;let s=$('stepArea');if(s)s.innerHTML='<div class="explain"><h4>Postup krok za krokem</h4><p>'+current.steps+'</p></div>'}
+function askHelper(){let q=$('helperInput').value.trim();if(!q)return;let reply='Zkus otázku rozdělit na menší kroky. ';let low=q.toLowerCase();if(/procent|%|kolik je/.test(low)){reply='U procent si nejprve urči, co hledáš. Část: základ × procenta ÷ 100. Procenta: část ÷ základ × 100. Základ: část ÷ (procenta ÷ 100). Zkus si do vzorce dosadit čísla ze zadání.'}else if(/závork|roznásob/.test(low)){reply='Při roznásobování násobíš každý člen v závorce: například 4(x + 3) = 4x + 12. Nezapomeň vynásobit oba členy.'}else if(/dosad|proměnn|x/.test(low)){reply='Při dosazování nahraď každé x zadaným číslem. Například pro x = 5 je 3x + 2 = 3 · 5 + 2 = 17. Dodrž pořadí početních operací.'}else if(/nechápu|nevím|nejde/.test(low)){reply='To je v pohodě. 😊 Pošli mi konkrétní příklad a projdeme ho po jednom kroku. Nejdřív zjistíme, co se počítá, potom vybereme vzorec a až nakonec dosadíme čísla.'}else if(current)reply='U aktuální úlohy: '+current.hintText+' Pokud mi napíšeš, u kterého kroku ses zasekl, vysvětlím právě ten.';$('helperReply').textContent=reply}
+function previewFiles(ev){let p=$('filePreview');p.innerHTML='';[...ev.target.files].forEach(f=>{if(f.type.startsWith('image/')){let img=document.createElement('img');img.alt=f.name;img.src=URL.createObjectURL(f);p.appendChild(img)}else{let tag=document.createElement('span');tag.className='filetag';tag.textContent='📄 '+f.name;p.appendChild(tag)}});$('uploadStatus').textContent=ev.target.files.length+' souborů přidáno jako podklady. Automatické přečtení obsahu PDF zatím není podporováno — text zadání můžeš vložit níže.'}
+function addCustom(){let t=$('customExample').value.trim();if(!t){$('uploadStatus').textContent='Nejdřív vlož text zadání do pole.';return}customs.push(t);$('uploadStatus').textContent='Vlastní zadání uloženo pro tuto relaci ('+customs.length+'). Zadání: '+t;$('helperReply').textContent='Vlastní příklad mám v tomto otevřeném webu poznamenaný. Vlož ho také do chatu, pokud chceš přesné řešení krok za krokem.'}
+function readExplanation(){let text=$('explanation').innerText;if('speechSynthesis'in window){let u=new SpeechSynthesisUtterance(text);u.lang='cs-CZ';speechSynthesis.cancel();speechSynthesis.speak(u);$('extraContent').style.display='block';$('extraContent').innerHTML='<b>🔊 Čtení spuštěno</b><p>Vysvětlení se čte nahlas. Ovládání hlasitosti je na zařízení.</p>'}else{showExtra('Poslech','Tento prohlížeč nepodporuje čtení nahlas. Můžeš si přečíst shrnutí na této stránce.')}}function showExtra(title,txt){let e=$('extraContent');e.style.display='block';e.innerHTML='<h4>'+title+'</h4><p>'+txt+'</p>'}
+function showVideoPlan(){showExtra('🎬 Osnova videovysvětlení',topic==='percent'?'1. Co znamená procento. 2. Jak vypočítat část ze základu. 3. Jak zjistit, kolik procent tvoří část. 4. Typová slovní úloha. 5. Společné řešení příkladu.':'1. Co je proměnná. 2. Dosazování čísel. 3. Sčítání podobných členů. 4. Roznásobení závorky. 5. Typové úlohy k přijímačkám.')}
+function showPodcast(){let e=$('extraContent');e.style.display='block';e.innerHTML=`<h4>🎙️ Vyber typ podcastu</h4><p class="muted">Vyber si, jak chceš látku probrat. Zatím jde o prototyp bez připojení k živým AI službám.</p><div class="topics"><button class="topic" onclick="podcastHumanAI()"><span class="emoji">🗣️</span><strong>1. AI a TY</strong><small>Piš otázky a veď rozhovor s AI pomocníkem.</small></button><button class="topic" onclick="podcastAIAI()"><span class="emoji">🤖🤖</span><strong>2. AI a AI</strong><small>Dvě AI postavy spolu vedou naučný dialog.</small></button></div><div id="podcastStage" class="explain"><p>Vyber jeden z typů výše.</p></div>`}
+function podcastHumanAI(){let stage=$('podcastStage');stage.innerHTML=`<h4>🗣️ Podcast: AI a TY</h4><p class="muted">Téma: ${topic==='percent'?'procenta':'algebraické výrazy'}. Napiš otázku nebo odpověz na otázku moderátora.</p><div id="podChat" style="display:flex;flex-direction:column;gap:9px;margin:12px 0"><div class="explain"><b>Matík:</b> Ahoj! Dnes si společně procvičíme ${topic==='percent'?'procenta':'algebraické výrazy'}. Co ti na tom připadá nejtěžší?</div></div><div class="row"><input id="podInput" type="text" placeholder="Napiš svou odpověď nebo otázku…"><button class="primary" onclick="sendPodcastChat()">Odeslat</button></div><p class="note">Poznámka: tento prototyp odpovídá pomocí připravených pravidel, není připojen k živé AI.</p>`}
+function sendPodcastChat(){let inp=$('podInput');if(!inp||!inp.value.trim())return;let q=inp.value.trim(),low=q.toLowerCase(),chat=$('podChat');let u=document.createElement('div');u.className='explain';u.innerHTML='<b>Ty:</b> '+escapeHTML(q);chat.appendChild(u);let answer;if(/procent|%/.test(low))answer='U procent nejprve zjisti, co hledáš. Část = základ × procenta ÷ 100. Když chceš procenta, počítej část ÷ základ × 100. Zkus mi poslat konkrétní příklad a projdeme ho.';else if(/závork|roznásob/.test(low))answer='Při roznásobování vynásob číslem před závorkou každý člen uvnitř. Například 3(x + 4) = 3x + 12.';else if(/nevím|nechápu|těž|nejde/.test(low))answer='To nevadí, vezmeme to pomalu. 😊 Napiš konkrétní příklad a začneme tím, co zadání vlastně hledá.';else answer='Dobrá otázka! Zkusme ji rozdělit na menší kroky. Co už ze zadání víš a co přesně máš vypočítat?';let a=document.createElement('div');a.className='explain';a.innerHTML='<b>Matík:</b> '+escapeHTML(answer);chat.appendChild(a);inp.value='';}
+function podcastAIAI(){let stage=$('podcastStage');let isP=topic==='percent';let lines=isP?[["Alex – AI učitel","Dnes řešíme procenta. Co znamená 20 %?"],["Ema – AI student","Je to 20 ze 100, tedy jedna pětina."],["Alex – AI učitel","Přesně! Kolik je tedy 20 % z 250?"],["Ema – AI student","Vypočítám 250 × 20 ÷ 100, takže 50."],["Alex – AI učitel","Správně. A pamatuj: nejdřív urči základ, potom použij vzorec." ]]:[["Alex – AI učitel","Dnes si vysvětlíme algebraické výrazy. Co znamená 3x, když x = 4?"],["Ema – AI student","Je to 3 krát 4, tedy 12."],["Alex – AI učitel","Výborně. A co 3x + 2?"],["Ema – AI student","Nejdřív násobení: 12 + 2 = 14."],["Alex – AI učitel","Přesně. Dodrž pořadí početních operací a postupuj krok za krokem." ]];stage.innerHTML=`<h4>🤖🤖 Podcast: AI a AI</h4><p class="muted">Ukázkový dialog dvou AI postav k tématu ${isP?'procent':'algebraických výrazů'}.</p><div id="aiDialogue"></div><div class="row"><button class="primary" onclick="playAIDialogue()">▶ Přehrát dialog</button><button class="secondary" onclick="readAIDialogue()">🔊 Přečíst nahlas</button></div><p class="note">Dialog je v této verzi připravený scénář. Pro dvě skutečné, samostatně odpovídající AI a generovaný podcast by bylo potřeba připojit AI službu a hlasové generování.</p>`;window.currentAIDialogue=lines;renderAIDialogue(lines)}
+function renderAIDialogue(lines){let d=$('aiDialogue');if(!d)return;d.innerHTML=lines.map((l,i)=>`<div class="explain" style="margin:8px 0"><b>${escapeHTML(l[0])}:</b> ${escapeHTML(l[1])}</div>`).join('')}
+function playAIDialogue(){if(!window.currentAIDialogue){podcastAIAI();return}renderAIDialogue(window.currentAIDialogue);if('speechSynthesis'in window){let text=window.currentAIDialogue.map(l=>l[0]+'. '+l[1]).join('. ');let u=new SpeechSynthesisUtterance(text);u.lang='cs-CZ';speechSynthesis.cancel();speechSynthesis.speak(u)}}
+function readAIDialogue(){playAIDialogue()}
+function escapeHTML(s){return String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]))}
+function reviewMistakes(){let e=$('extraContent');e.style.display='block';if(!mistakes.length){e.innerHTML='<h4>🔁 Zatím žádné chyby k opakování</h4><p>Dokonči pár úloh a sem se uloží příklady, které bude dobré zopakovat.</p>';return}e.innerHTML='<h4>🔁 Příklady k zopakování</h4>'+mistakes.slice(-8).map((m,i)=>`<div class="explain"><b>${m.txt}</b><p>Správný výsledek: ${m.ans}${m.unit||''}</p><p class="muted">${m.steps}</p></div>`).join('')}
+
+let podcastType='me', podcastText='';
+function setPodcastType(t){
+ podcastType=t;
+ $('podTypeMe').classList.toggle('active',t==='me');$('podTypeAI').classList.toggle('active',t==='ai');
+ $('podMePanel').style.display=t==='me'?'block':'none';$('podAIPanel').style.display=t==='ai'?'block':'none';
+ $('podOutput').style.display='none';stopPodcast();
+}
+function podcastTopic(){return $('podTopic').value}
+function openLiveAIChat(){
+ const q=$('podQuestion').value.trim();
+ const topicName=podcastTopic()==='percent'?'procenta':podcastTopic()==='algebra'?'algebraické výrazy':'příprava na přijímací zkoušky';
+ const prompt='Jsi trpělivý učitel matematiky pro žáka 9. třídy, který se připravuje na přijímací zkoušky v ČR. Vysvětluj jednoduše česky, krok za krokem, neprozrazuj výsledek před vysvětlením a pak dej jeden podobný příklad k procvičení. Téma: '+topicName+'. Moje otázka: '+(q||'Začni krátkým vysvětlením tématu a zeptej se, co mi nejde.') ;
+ const panel=$('liveAIPrompt');
+ panel.style.display='block';
+ panel.innerHTML='<h4>📋 Zadání pro skutečnou AI</h4><p>Otevři ChatGPT a vlož tam tento text:</p><p id="livePromptText"></p><div class="row"><button class="primary" onclick="copyLivePrompt()">📋 Zkopírovat zadání</button><button class="secondary" onclick="window.open(\'https://chatgpt.com/\',\'_blank\',\'noopener\')">Otevřít ChatGPT ↗</button></div><p class="note">Pokud se text nezkopíruje automaticky, použij tlačítko kopírování a vlož ho do chatu.</p>';
+ $('livePromptText').textContent=prompt;
+ window.liveAIPrompt=prompt;
+ try { if(navigator.clipboard && navigator.clipboard.writeText) navigator.clipboard.writeText(prompt).then(()=>{panel.querySelector('p').textContent='Zadání je připravené a pokud to prohlížeč dovolil, už je zkopírované. Otevři ChatGPT a vlož ho do chatu.'}).catch(()=>{}); } catch(e){}
+}
+function copyLivePrompt(){
+ if(!window.liveAIPrompt)return;
+ if(navigator.clipboard && navigator.clipboard.writeText){
+  navigator.clipboard.writeText(window.liveAIPrompt).then(()=>{const b=$('liveAIPrompt').querySelector('button');if(b)b.textContent='✅ Zkopírováno';}).catch(()=>showPromptFallback());
+ }else showPromptFallback();
+}
+function showPromptFallback(){
+ const p=$('livePromptText');if(!p)return;
+ p.innerHTML='';
+ const ta=document.createElement('textarea');ta.value=window.liveAIPrompt;ta.rows=5;ta.style.width='100%';ta.setAttribute('aria-label','Zadání pro zkopírování');p.appendChild(ta);ta.focus();ta.select();
+}
+function podcastAsk(){
+ const q=$('podQuestion').value.trim();if(!q){$('podOutput').style.display='block';$('podOutput').innerHTML='<b>Napiš nejdřív otázku.</b>';return}
+ const subject=podcastTopic();let response='';
+ if(subject==='percent'||/procent|%|sleva|základ/i.test(q)){
+ response='Jasně, pojďme pomalu. U procent si nejdřív řekni, co hledáš. Pokud hledáš část, použij: základ krát počet procent a výsledek vyděl stem. Například 15 % z 200 je 200 × 15 ÷ 100 = 30. Pokud hledáš, kolik procent tvoří část, vyděl část základem a vynásob stem. Teď si zkus u svého příkladu označit celek — to je základ. Pak teprve počítej.';
+ }else if(subject==='algebra'||/algebra|závork|výraz|proměnn|dosad|x\b/i.test(q)){
+ response='U algebraických výrazů je důležité postupovat po krocích. Když máš například 3x + 2 a x = 4, nahradíš x čtyřkou: 3 krát 4 plus 2. To je 12 + 2, tedy 14. U podobných členů, třeba 5x − 2x, počítáš jen koeficienty: 5 − 2 = 3, takže výsledek je 3x. A při roznásobení závorky musíš vynásobit každý člen uvnitř.';
+ }else{
+ response='Na přijímačkách si zadání nejdřív přečti celé a podtrhni si důležité údaje. Pak si napiš, co hledáš, a vyber postup. Počítej přehledně po jednotlivých řádcích a nakonec zkontroluj, jestli výsledek dává smysl. Když se zasekneš, nehádej — napiš si, co už víš, a pokračuj odtud.';
+ }
+ podcastText='Ty: '+q+'\\n\\nMatík: '+response;
+ $('podOutput').style.display='block';$('podOutput').innerHTML='<h4>🗣️ Rozhovor: AI a TY</h4><p><b>Ty:</b> '+escapeHTML(q)+'</p><p><b>Matík:</b> '+escapeHTML(response)+'</p><p class="muted">Můžeš položit další otázku nebo si odpověď nechat přečíst.</p>';
+}
+function generateAIPodcast(){
+ const t=podcastTopic(),len=$('podLength').value;
+ let lines;
+ if(t==='percent') lines=[
+ ['Alex – moderátor','Vítej u Matika Start! Dnes si vysvětlíme procenta. Procento znamená jednu setinu celku.'],
+ ['Bára – druhá AI','Takže 25 procent je čtvrtina?'],
+ ['Alex – moderátor','Přesně tak. Když hledáš 25 procent z 240, vypočítáš 240 krát 25 děleno stem. Výsledek je 60.'],
+ ['Bára – druhá AI','A co když vím, že 30 je 15 procent z nějakého čísla?'],
+ ['Alex – moderátor','Pak hledáš základ. Vydělíš 30 číslem 0,15 a vyjde 200. Kontrola: 15 procent z 200 je opravdu 30.'],
+ ['Bára – druhá AI','Jakou chybu si mám hlídat?'],
+ ['Alex – moderátor','Nezaměň část a základ. Základ je celek, ze kterého procenta počítáš. Ve slovní úloze si ho podtrhni jako první.'],
+ ['Bára – druhá AI','Takže: část počítám násobením procenty a dělením stem; procenta zjistím část děleno základem krát sto. To dává smysl!']
+ ];
+ else if(t==='algebra') lines=[
+ ['Alex – moderátor','Dnes si dáme algebraické výrazy. Písmeno, například x, zastupuje číslo.'],
+ ['Bára – druhá AI','Když x je 4, co znamená 3x plus 2?'],
+ ['Alex – moderátor','Dosadíme: 3 krát 4 plus 2. Nejdřív násobení, takže 12 plus 2 je 14.'],
+ ['Bára – druhá AI','A co 7x minus 2x?'],
+ ['Alex – moderátor','To jsou podobné členy. Odečteme koeficienty 7 minus 2 a dostaneme 5x.'],
+ ['Bára – druhá AI','A závorky?'],
+ ['Alex – moderátor','U 3 krát závorka x plus 4 musíš trojkou vynásobit oba členy. Výsledek je 3x plus 12.'],
+ ['Bára – druhá AI','Hlavní pravidlo: pomalu dosadit, spojit podobné členy a při závorkách nezapomenout na každý člen.']
+ ];
+ else lines=[
+ ['Alex – moderátor','Vítej u speciálu k přijímačkám. Dnes probereme chytré postupy.'],
+ ['Bára – druhá AI','Co mám udělat, když poprvé vidím složitou slovní úlohu?'],
+ ['Alex – moderátor','Přečti ji dvakrát. Podtrhni čísla a jednotky, potom si napiš, co hledáš.'],
+ ['Bára – druhá AI','A když nevím, jaký vzorec použít?'],
+ ['Alex – moderátor','Zkus úlohu převést na jednodušší otázku. U procent si urči základ, u algebry pojmenuj neznámou a zapisuj vztahy.'],
+ ['Bára – druhá AI','Mám počítat rychle?'],
+ ['Alex – moderátor','Přesnost je první. Piš jednotlivé kroky, nech si čas na kontrolu a pokud se zasekneš, přeskoč úlohu a vrať se k ní později.'],
+ ['Bára – druhá AI','Takže plán, přehledný zápis a kontrola. To si zapamatuju!']
+ ];
+ if(len==='short')lines=lines.slice(0,5);if(len==='long')lines=lines.concat(lines.slice(2,6),lines.slice(0,4));
+ podcastText=lines.map(x=>x[0]+': '+x[1]).join('\\n\\n');
+ $('podOutput').style.display='block';
+ $('podOutput').innerHTML='<h4>🎙️ AI a AI — '+(t==='percent'?'Procenta':t==='algebra'?'Algebraické výrazy':'Přijímačkové tipy')+'</h4>'+lines.map((x,i)=>'<p><b>'+escapeHTML(x[0])+':</b> '+escapeHTML(x[1])+'</p>').join('')+'<p class="muted">Stiskni „Přehrát nahlas“ a prohlížeč přečte celý dialog.</p>';
+}
+function escapeHTML(s){return String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]))}
+function speakPodcast(){
+ if(!podcastText){if(podcastType==='ai')generateAIPodcast();else podcastAsk()}
+ if(!podcastText)return;
+ if(!('speechSynthesis' in window)){alert('Tento prohlížeč nepodporuje čtení nahlas.');return}
+ speechSynthesis.cancel();let u=new SpeechSynthesisUtterance(podcastText);u.lang='cs-CZ';u.rate=0.92;u.pitch=1;
+ speechSynthesis.speak(u);
+}
+function stopPodcast(){if('speechSynthesis' in window)speechSynthesis.cancel()}
+
+showExplanation();
+
+window.addEventListener('DOMContentLoaded',()=>{renderPhoneNotes();renderPhoneReminders()});
+</script></body></html>
